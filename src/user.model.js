@@ -6,20 +6,8 @@ var User = function(name, id) {
 };
 
 User.prototype = function () {
-    var setPrice = function(newPrice) {
-        this.price = newPrice;
-    };
-    var setLocation = function(newLocation) {
-        this.location = newLocation;
-    };
-
     var addBook = function (bookId) {
         this.books.push(bookId);
-    };
-
-    var returnBook = function (bookId, userId) { // return book to user?
-        removeBook(bookId);
-        giveBookTo(userId); // do we need some master overlord who can do this?
     };
 
     var removeBook = function (bookId) { // private
@@ -29,6 +17,6 @@ User.prototype = function () {
 
     return {
         addBook: addBook,
-        returnBook: returnBook
+        removeBook: removeBook
     }
 }();
